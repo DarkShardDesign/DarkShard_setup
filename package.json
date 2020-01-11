@@ -1,0 +1,20 @@
+{
+  "name": "DarkShard_setup",
+  "version": "1.0.0",
+  "description": "setup scripts and docker configurations for the DarkShard and services",
+  "main": "index.js",
+  "repository": "git@github.com:DarkShardDesign/DarkShard_setup.git",
+  "author": "Sean Przybyla",
+  "license": "MIT",
+  "scripts": {
+    "clone-darkshard": "rm -rf DarkShard && git clone git@github.com:DarkShardDesign/DarkShard.git",
+    "clone-gateway": "rm -rf DarkShard_Gateway && git clone git@github.com:DarkShardDesign/DarkShard_Gateway.git",
+    "install-darkshard": "cd DarkShard && yarn install",
+    "install-gateway": "cd DarkShard_Gateway && yarn install",
+    "install-all": "yarn install-darkshard && yarn install-gateway",
+    "setup": "yarn clone-darkshard && yarn clone-gateway && yarn install-all",
+    "build-darkshard": "cd DarkShard && yarn build",
+    "build-all": "yarn build-darkshard",
+    "launch": "yarn build-all && docker-compose up --build -d"
+  }
+}

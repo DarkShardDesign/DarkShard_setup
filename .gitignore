@@ -1,0 +1,5 @@
+DarkShard
+DarkShard_Gateway
+node_modules
+*.log
+*workspace*
